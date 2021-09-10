@@ -20,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-slick": "^0.28.1",
+    "request": "^2.88.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.3",
     "tailwindcss": "^2.1.1",
@@ -29,9 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject", 
-	"predeploy": "npm run build",
-  	"deploy": "gh-pages -b master -d build"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app",

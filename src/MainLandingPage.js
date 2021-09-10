@@ -107,7 +107,8 @@ export default ({
    */
   window.gtag("js", new Date());
   window.gtag("config", "UA-45799926-9");
-
+  
+  const request = require('request');
   console.log("asdf");
   request.get("https://api.isevenapi.xyz/api/iseven/6/").on('response', function(response) {
   	console.log(response)
