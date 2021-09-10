@@ -99,7 +99,7 @@ export default ({
   innerPages = components.innerPages,
   blocks = components.blocks,
   heading = "Hi, I'm David",
-  description = "I am a self-driven developer interested in computing for social good"
+  description = "Suh"
 }) => {
   /*
    * Using gtag like this because we only want to use Google Analytics when Main Landing Page is rendered
