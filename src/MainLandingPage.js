@@ -19,7 +19,9 @@ import { ReactComponent as RadioIcon } from "feather-icons/dist/icons/radio.svg"
 import { ReactComponent as HandleIcon } from "images/handle-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "images/arrow-right-3-icon.svg";
 
-import heroScreenshotImageSrc from "images/demo/MainLandingPageHero.png";
+import { Link } from "react-router-dom";
+
+
 import logo from "images/body.png";
 import useInView from "@owaiswiz/use-in-view";
 
@@ -90,16 +92,16 @@ const ResizeHandleButton = tw.button`cursor-col-resize focus:outline-none w-4 bo
 
 export default ({
   features = null,
-  primaryButtonUrl = "#landingPageDemos",
+  // primaryButtonUrl = "#landingPageDemos",
   // primaryButtonText = "Explore Demos",
   // secondaryButtonUrl = "#componentDemos",
-  secondaryButtonText = "View Components",
+  // secondaryButtonText = "View Components",
   buttonRoundedCss = "",
   landingPages = components.landingPages,
   innerPages = components.innerPages,
   blocks = components.blocks,
   heading = "Hi, I'm David",
-  description = "Suh"
+  description = "I'm a Master's student studying Computer Science at the University of Minnesota (expected graduation May 2022). I'm interested in a wide range of work, from standard software engineering to machine learning. Above all, I'm looking for opportunities to grow, personally and professionally. Welcome to my page!"
 }) => {
   /*
    * Using gtag like this because we only want to use Google Analytics when Main Landing Page is rendered
@@ -107,12 +109,12 @@ export default ({
    */
   window.gtag("js", new Date());
   window.gtag("config", "UA-45799926-9");
-  
-  const request = require('request');
-  console.log("asdf");
-  request.get("https://api.isevenapi.xyz/api/iseven/6/").on('response', function(response) {
-  	console.log(response)
-	});
+
+  // const request = require('request');
+  // console.log("asdf");
+  // request.get("https://api.isevenapi.xyz/api/iseven/6/").on('response', function(response) {
+  // 	console.log(response)
+	// });
 
   const previewImageAnimationVariants = {
     rest: {
@@ -150,14 +152,11 @@ export default ({
               <NavLink href="/">
                 Home
               </NavLink>
-              <NavLink href="/">
-                About Me
-              </NavLink>
-              <NavLink href="/">
+              <NavLink as={Link} to="/work-experience">
                 Work Experience
               </NavLink>
-              <NavLink href="/">
-                Contact
+              <NavLink as={Link} to="/contact-me">
+                Contact Me
               </NavLink>
               <div tw="md:hidden flex-100 h-0"></div>
 

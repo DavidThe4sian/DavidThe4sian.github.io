@@ -103,9 +103,11 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 
 import ComponentRenderer from "ComponentRenderer.js";
 import MainLandingPage from "MainLandingPage.js";
-import ThankYouPage from "ThankYouPage.js";
+import ContactMePage from "ContactMePage.js";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
@@ -113,7 +115,8 @@ export default function App() {
 
 
   return (
-    <Router>
+    // <HashRouter>
+    <div>
       <Switch>
         <Route path="/components/:type/:subtype/:name">
           <ComponentRenderer />
@@ -121,14 +124,15 @@ export default function App() {
         <Route path="/components/:type/:name">
           <ComponentRenderer />
         </Route>
-        <Route path="/thank-you">
-          <ThankYouPage />
+        <Route path="/contact-me">
+          <ContactMePage />
         </Route>
         <Route path="/">
           <MainLandingPage />
         </Route>
       </Switch>
-    </Router>
+    </div>
+    // </HashRouter>
   );
 }
 
