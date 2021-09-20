@@ -1,5 +1,7 @@
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and also uses Treact Components.
 
+It has a bunch of extra files that came with Treact; I've cleaned up the directory a bit, but many still remain.
+
 ## Available Script
 
 In the project directory, you can run:
