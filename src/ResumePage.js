@@ -38,23 +38,21 @@ export default () => {
   window.gtag("js", new Date());
   window.gtag("config", "UA-45799926-9");
 
-  const downloadUrl = "/treact-ui.zip"
-  React.useEffect(() => {
-    var iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.src = downloadUrl
-    document.body.appendChild(iframe);
-  }, [])
+  // React.useEffect(() => {
+  //   var iframe = document.createElement("iframe");
+  //   iframe.style.display = "none";
+  //   iframe.src = downloadUrl
+  //   document.body.appendChild(iframe);
+  // }, [])
 
   return (
     <AnimationRevealPage disabled>
       <Container tw="-mx-8 -mt-8 pt-8 px-8">
         <Content2Xl>
         <NavRow>
-          <LogoLink href="/">
-            {/*<img src={logo} alt="" />*/}
-            David Ma
-          </LogoLink>
+        <LogoLink href="/">
+          <img src="david_name.png" alt="" />
+        </LogoLink>
           <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">
             <NavLink href="/">
               Home
@@ -62,22 +60,15 @@ export default () => {
             <NavLink as={Link} to="/work-experience">
               Work Experience
             </NavLink>
-            <NavLink as={Link} to="/contact-me">
-              Contact Me
+            <NavLink as={Link} to="/resume">
+              Resume
             </NavLink>
             <div tw="md:hidden flex-100 h-0"></div>
 
           </div>
         </NavRow>
           <HeroRow>
-            <Heading>Thank You!</Heading>
-            <br/>
-            <p>Thanks for stopping by! If you have any questions, comments, or want to reach out to me for any other reason, </p>
-            <br/>
-            {/*<Document file="resume.pdf" onLoadError={console.error} onLoadSuccess={(pdf) => alert('Loaded a file with ' + pdf.numPages + ' pages!')}>
-            </Document>*/}
             <PDF/>
-            {/* <iframe src="./images/resume.pdf" width="100%" height="500px"></iframe> */}
           </HeroRow>
         </Content2Xl>
       </Container>

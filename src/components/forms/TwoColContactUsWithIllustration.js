@@ -34,7 +34,7 @@ export default ({
   subheading = "Contact Us",
   heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with us.</>,
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  submitButtonText = "Contact Me",
+  submitButtonText = "Resume",
   formAction = "#",
   formMethod = "get",
   textOnLeft = true,

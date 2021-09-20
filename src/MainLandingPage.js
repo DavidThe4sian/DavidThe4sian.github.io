@@ -19,6 +19,8 @@ import { ReactComponent as RadioIcon } from "feather-icons/dist/icons/radio.svg"
 import { ReactComponent as HandleIcon } from "images/handle-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "images/arrow-right-3-icon.svg";
 
+import { SocialIcon } from 'react-social-icons';
+
 import { Link } from "react-router-dom";
 
 
@@ -92,16 +94,9 @@ const ResizeHandleButton = tw.button`cursor-col-resize focus:outline-none w-4 bo
 
 export default ({
   features = null,
-  // primaryButtonUrl = "#landingPageDemos",
-  // primaryButtonText = "Explore Demos",
-  // secondaryButtonUrl = "#componentDemos",
-  // secondaryButtonText = "View Components",
   buttonRoundedCss = "",
-  landingPages = components.landingPages,
-  innerPages = components.innerPages,
-  blocks = components.blocks,
   heading = "Hi, I'm David",
-  description = "I'm a Master's student studying Computer Science at the University of Minnesota (expected graduation May 2022). I'm interested in a wide range of work, from standard software engineering to machine learning. Above all, I'm looking for opportunities to grow, personally and professionally. Welcome to my page!"
+  description = "I'm a Master's student studying Computer Science at the University of Minnesota (expected graduation May 2022). I'm interested in a wide range of work, from software engineering to machine learning. Above all, I'm looking for opportunities to grow, personally and professionally. Welcome to my page!"
 }) => {
   /*
    * Using gtag like this because we only want to use Google Analytics when Main Landing Page is rendered
@@ -126,28 +121,14 @@ export default ({
     }
   };
 
-  const noOfLandingPages = Object.keys(landingPages).length;
-  const noOfInnerPages = Object.keys(innerPages).length;
-  const noOfComponentBlocks = Object.values(blocks).reduce((acc, block) => acc + Object.keys(block.elements).length, 0);
-
-  features = features || [
-    `${noOfLandingPages} Landing Page Demos`,
-    `${noOfInnerPages} Inner Pages`,
-    `${noOfComponentBlocks} Components`,
-    "Uses TailwindCSS",
-    "Fully Responsive",
-    "Fully Customizable"
-  ];
-
   return (
     <AnimationRevealPage disabled>
-      <Container tw="bg-gray-100 -mx-8 -mt-8 pt-8 px-8">
+      <Container tw="bg-white -mx-8 -mt-8 pt-8 px-8">
         <Content2Xl>
           <NavRow>
-            <LogoLink href="/">
-              {/*<img src={logo} alt="" />*/}
-              David Ma
-            </LogoLink>
+          <LogoLink href="/">
+            <img src="david_name.png" alt="" />
+          </LogoLink>
             <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">
               <NavLink href="/">
                 Home
@@ -155,39 +136,23 @@ export default ({
               <NavLink as={Link} to="/work-experience">
                 Work Experience
               </NavLink>
-              <NavLink as={Link} to="/contact-me">
-                Contact Me
+              <NavLink as={Link} to="/resume">
+                Resume
               </NavLink>
               <div tw="md:hidden flex-100 h-0"></div>
 
             </div>
           </NavRow>
           <HeroRow>
-          {/*
-            <UpdateNotice>
-              <UpdateNoticeIcon />
-              Last updated on 20th April, 2021 - Added support for React v17 and TailwindCSS v2!
-            </UpdateNotice> */}
             <TextColumn>
               <Heading as="h1">{heading}</Heading>
               <Description>{description}</Description>
-              {/*
-              <FeatureList>
-                {features.map((feature, index) => (
-                  <Feature key={index}>
-                    <FeatureIcon />
-                    <FeatureText>{feature}</FeatureText>
-                  </Feature>
-                ))}
-              </FeatureList> */}
-              {/*}
-              <Actions>
-                <PrimaryButton href={primaryButtonUrl} css={buttonRoundedCss}>
-                  {primaryButtonText}
-                </PrimaryButton>
-                <SecondaryButton href={secondaryButtonUrl}>{secondaryButtonText}</SecondaryButton>
-              </Actions>
-              */}
+              <br/>
+              <span>
+                <SocialIcon url="https://www.linkedin.com/in/david-ma-8551b39b/" style={{"margin": "10px", "margin-left": "0px"}}/>
+                <SocialIcon url="mailto:maxxx818@umn.edu" style={{"margin-right": "10px"}}/>
+                <SocialIcon url="https://github.com/davidthe4sian" style={{"margin-right": "10px"}}/>
+              </span>
             </TextColumn>
             <ImageColumn>
               <ImageContainer>
@@ -195,156 +160,8 @@ export default ({
               </ImageContainer>
             </ImageColumn>
           </HeroRow>
-          {/*<SectionContainer id="landingPageDemos">
-            <SectionHeading>Landing Pages</SectionHeading>
-            <SectionDescription>
-              We have {noOfLandingPages} premade landing pages. Click on the "View Live Demo" button to see them in
-              action. Customizing or Creating your own custom landing page is really simple by using our UI components.
-            </SectionDescription>
-            <PreviewCards>
-              {Object.entries(landingPages).map(([pageName, page], index) => (
-                <PreviewCardContainer key={index}>
-                  <PreviewCard initial="rest" animate="rest" whileHover="hover" href={page.url} target="_blank">
-                    <PreviewCardImageContainer>
-                      <PreviewCardImage
-                        transition={{ type: "tween" }}
-                        variants={previewImageAnimationVariants}
-                        imageSrc={page.imageSrc}
-                      />
-                    </PreviewCardImageContainer>
-                    <PreviewButton>View Live Demo</PreviewButton>
-                  </PreviewCard>
-                </PreviewCardContainer>
-              ))}
-            </PreviewCards>
-          </SectionContainer>
-		  */}
-		  {/*
-          <SectionContainer>
-            <SectionHeading>Inner Pages</SectionHeading>
-            <SectionDescription>
-              We also provide {noOfInnerPages} additional inner pages for your various needs like a signup, login,
-              pricing, about us, contact, blog etc. To view them in action click the "View Live Demo" button.
-            </SectionDescription>
-            <PreviewCards>
-              {Object.entries(innerPages).map(([pageName, page], index) => (
-                <PreviewCardContainer key={index}>
-                  <PreviewCard initial="rest" animate="rest" whileHover="hover" href={page.url} target="_blank">
-                    <PreviewCardImageContainer>
-                      <PreviewCardImage
-                        transition={{ type: "tween" }}
-                        variants={!page.scrollAnimationDisabled && previewImageAnimationVariants}
-                        imageSrc={page.imageSrc}
-                      />
-                    </PreviewCardImageContainer>
-                    <PreviewButton>View Live Demo</PreviewButton>
-                  </PreviewCard>
-                </PreviewCardContainer>
-              ))}
-            </PreviewCards>
-          </SectionContainer>
-		  */}
-      {/*
-
-          <SectionContainer id="componentDemos">
-            <SectionHeading>Component Blocks</SectionHeading>
-            <SectionDescription>
-              We also provide {noOfComponentBlocks} components along with the premade landing pages so you can create
-              your own landing page within minutes as you see fit. You can combine these components to create 1000s of
-              unique attractive web pages.
-              <span tw="block text-sm text-gray-500 mt-2">
-                (Preview Panel below inspired by Tailwind UI)
-              </span>
-            </SectionDescription>
-            <BlocksRenderer blocks={Object.values(blocks)} />
-          </SectionContainer>
-          */}
         </Content2Xl>
       </Container>
     </AnimationRevealPage>
-  );
-};
-
-const BlocksRenderer = ({ blocks }) => {
-  const [lastVisibleBlockIndex, setLastVisibleBlockIndex] = useState(0);
-
-  const updateLastVisibleBlockIndex = index => {
-    console.log("LAST WAS ", lastVisibleBlockIndex);
-    if (index > lastVisibleBlockIndex) setLastVisibleBlockIndex(index);
-  };
-
-  return (
-    <ComponentsContainer>
-      {blocks.map(
-        (block, index) =>
-          lastVisibleBlockIndex + 1 >= index && (
-            <Block key={index} components={block} notifyIsVisible={() => updateLastVisibleBlockIndex(index)} />
-          )
-      )}
-    </ComponentsContainer>
-  );
-};
-
-const Block = ({ notifyIsVisible, components }) => {
-  const offset = 30;
-  const [ref, inView] = useInView(offset);
-
-  useEffect(() => {
-    if (inView) notifyIsVisible();
-  }, [inView, notifyIsVisible]);
-
-  const ResizeHandle = (
-    <ResizeHandleButton>
-      <HandleIcon tw="w-4 h-4 text-gray-600" />
-    </ResizeHandleButton>
-  );
-
-  const componentBlockRefs = {};
-
-  const updateComponentBlockIframeHeight = iframe => {
-    iframe.style.height = "auto";
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-  };
-
-  return (
-    <div ref={ref} tw="mt-32">
-      <ComponentsType>{components.type}</ComponentsType>
-      <Components>
-        {Object.values(components.elements).map((component, componentIndex) => (
-          <Component key={componentIndex}>
-            <ComponentHeading>
-              <ComponentName>{component.name}</ComponentName>
-              <ComponentPreviewLink className="group" href={component.url} target="_blank">
-                View Live Demo{" "}
-                <ArrowRightIcon tw="transition duration-300 transform group-hover:translate-x-px ml-2 w-4 h-4" />
-              </ComponentPreviewLink>
-            </ComponentHeading>
-            <ComponentContent>
-              <ResizableBox
-                minWidth={310}
-                default={{
-                  width: "100%",
-                  height: "100%"
-                }}
-                bounds="parent"
-                disableDragging={true}
-                enableResizing={{ right: true }}
-                resizeHandleComponent={{ right: ResizeHandle }}
-                resizeHandleWrapperClass={`resizeHandleWrapper`}
-                onResize={() => updateComponentBlockIframeHeight(componentBlockRefs[component.url])}
-              >
-                <iframe
-                  src={component.url}
-                  title="Hero"
-                  width="100%"
-                  ref={ref => (componentBlockRefs[component.url] = ref)}
-                  onLoad={e => updateComponentBlockIframeHeight(e.target)}
-                />
-              </ResizableBox>
-            </ComponentContent>
-          </Component>
-        ))}
-      </Components>
-    </div>
   );
 };
