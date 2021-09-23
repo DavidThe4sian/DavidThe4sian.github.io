@@ -30,8 +30,7 @@ import ResumePage from "ResumePage.js";
 import WorkExperiencePage from "WorkExperiencePage.js"
 
 // import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { Route, Switch, Link } from "react-router-dom";
-import { HashRouter } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 export default function App() {
 

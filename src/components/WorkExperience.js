@@ -10,7 +10,7 @@ class WorkExperience extends React.Component {
   render() {
     return (
       <div style={{"height": "auto", "min-width":"100%", "margin-bottom": "30px"}}>
-        <img src={this.props.image} width="100px" align="left" style={{"margin-right":"15px"}}/>
+        <img src={this.props.image} alt="Icon failed to load" width="100px" align="left" style={{"margin-right":"15px"}}/>
         <Heading>{this.props.company}</Heading>
         <SubHeading>{this.props.title}</SubHeading>
         {this.props.desc}
