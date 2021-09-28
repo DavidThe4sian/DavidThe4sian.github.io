@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import { Container, Content2Xl } from "components/misc/Layouts";
 import tw from "twin.macro";
@@ -8,13 +7,14 @@ import { SectionDescription as DescriptionBase } from "components/misc/Typograph
 import Image from 'react-bootstrap/Image'
 
 import { SocialIcon } from 'react-social-icons';
-
+import Footer from "components/Footer.js";
 import { Link } from "react-router-dom";
 
 
-import logo from "images/body.png";
+import bodypic from "images/body.png";
 
-/* Hero */
+import "customcss.css";
+
 const Row = tw.div`flex`;
 const NavRow = tw(Row)`flex flex-col lg:flex-row items-center justify-between`;
 const NavLink = tw.a`mt-4 lg:mt-0 transition duration-300 font-medium pb-1 border-b-2 mr-12 text-gray-700 border-gray-400 hocus:border-gray-700`;
@@ -29,8 +29,6 @@ const Description = tw(
 )`mt-4 text-center lg:text-left lg:text-base text-gray-700 max-w-lg mx-auto lg:mx-0`;
 const ImageColumn = tw(Column)`mx-auto lg:mr-0 relative mt-16 lg:mt-0 lg:ml-8`;
 const ImageContainer = tw.div``;
-// const Image = tw.img`max-w-full rounded-t sm:rounded`;
-
 
 export default ({
   features = null,
@@ -38,20 +36,11 @@ export default ({
   heading = "Hi, I'm David",
   description = "I'm a Master's student studying Computer Science at the University of Minnesota (expected graduation May 2022). I'm interested in a wide range of work, from software engineering to machine learning. Above all, I'm looking for opportunities to grow, personally and professionally. Welcome to my page!"
 }) => {
-  /*
-   * Using gtag like this because we only want to use Google Analytics when Main Landing Page is rendered
-   * Remove this part and the the gtag script inside public/index.html if you dont need google analytics
-   */
   window.gtag("js", new Date());
   window.gtag("config", "UA-45799926-9");
 
-  // const request = require('request');
-  // console.log("asdf");
-  // request.get("https://api.isevenapi.xyz/api/iseven/6/").on('response', function(response) {
-  // 	console.log(response)
-	// });
-
   return (
+    <div>
     <AnimationRevealPage disabled>
       <Container tw="bg-white -mx-8 -mt-8 pt-8 px-8">
         <Content2Xl>
@@ -86,12 +75,14 @@ export default ({
             </TextColumn>
             <ImageColumn>
               <ImageContainer>
-                <Image src={logo} roundedCircle />
+                <Image src={bodypic} style={{"float":"right"}} roundedCircle />
               </ImageContainer>
             </ImageColumn>
           </HeroRow>
         </Content2Xl>
       </Container>
     </AnimationRevealPage>
+    <Footer/>
+    </div>
   );
 };

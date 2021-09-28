@@ -11,3 +11,13 @@ li {
     width: 80% !important;
     height: 100% !important;
 }
+
+.footer{
+  margin-top: 1rem;
+  padding: .5rem;
+  background-color:rgb(207, 207, 207);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1rem;
+}

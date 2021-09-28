@@ -8,6 +8,8 @@ import { SectionHeading as HeadingBase } from "components/misc/Headings";
 import { Link } from "react-router-dom";
 
 import WorkExperience from "components/WorkExperience.js"
+import Footer from "components/Footer.js";
+
 
 import "customcss.css";
 
@@ -54,6 +56,7 @@ export default () => {
   </ul>);
 
   return (
+    <div>
     <AnimationRevealPage disabled>
       <Container tw="-mx-8 -mt-8 pt-8 px-8">
         <Content2Xl>
@@ -84,5 +87,7 @@ export default () => {
         </Content2Xl>
       </Container>
     </AnimationRevealPage>
+    <Footer/>
+    </div>
   );
 };

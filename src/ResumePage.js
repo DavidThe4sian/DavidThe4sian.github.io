@@ -6,6 +6,7 @@ import tw from "twin.macro";
 import { LogoLink } from "components/headers/light.js";
 import { Link } from "react-router-dom";
 import { pdfjs } from 'react-pdf';
+import Footer from "components/Footer.js";
 
 import "customcss.css";
 
@@ -34,6 +35,7 @@ export default () => {
   // }, [])
 
   return (
+    <div>
     <AnimationRevealPage disabled>
       <Container tw="-mx-8 -mt-8 pt-8 px-8">
         <Content2Xl>
@@ -61,5 +63,7 @@ export default () => {
         </Content2Xl>
       </Container>
     </AnimationRevealPage>
+    <Footer/>
+    </div>
   );
 };
