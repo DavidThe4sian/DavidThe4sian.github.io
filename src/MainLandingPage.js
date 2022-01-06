@@ -34,7 +34,7 @@ export default ({
   features = null,
   buttonRoundedCss = "",
   heading = "Hi, I'm David",
-  description = "I'm a Master's student studying Computer Science at the University of Minnesota (expected graduation May 2022). I'm interested in a wide range of work, from software engineering to machine learning. Above all, I'm looking for opportunities to grow, personally and professionally. Welcome to my page!"
+  description = "I'm a Master's student studying Computer Science at the University of Minnesota (expected graduation May 2022). Above all, I'm looking for opportunities to grow, personally and professionally. Welcome to my page!"
 }) => {
   window.gtag("js", new Date());
   window.gtag("config", "UA-45799926-9");
